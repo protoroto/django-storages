@@ -41,6 +41,12 @@ To put static files on Azure via ``collectstatic`` on Django >= 4.2 you'd includ
 The settings documented in the following sections include both the key for ``OPTIONS`` (and subclassing) as
 well as the global value. Given the significant improvements provided by the new API, migration is strongly encouraged.
 
+.. warning::
+    Django 4.2.5 release fixed a bug with this `commit <https://github.com/django/django/commit/6b965c600054f970bdf94017ecf2e0e6e0a4326b#diff-b6f3108584c2db0b4c53253b6b3b5d5c60fbb3a82e7ed6544922fe689631fa43R239>`_
+    preventing the options passed in the ``OPTIONS`` dictionary to actually be injected in the storage class.
+    It's working again in Django >= 5.1, so if you're in between Django 4.2.5 and Django 5.0 use the global settings to specify storage options.
+
+
 Authentication Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
